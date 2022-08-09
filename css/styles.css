@@ -34,7 +34,9 @@ address {
 }
 
 a {
-	color: currentColor;
+	/* color: currentColor; */
+	text-decoration: none;
+	display: inline-block;
 }
 
 button {
@@ -159,12 +161,15 @@ body {
 	display: flex;
 }
 
-.current {
+.site-nav-list .current {
 	position: relative;
+	color: var(--accent-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current::after {
+.site-nav-list .current::after {
 	position: absolute;
+	display: block;
 	content: '';
 	left: 0;
 	width: 100%;
@@ -173,13 +178,13 @@ body {
 	border-radius: 2px;
 	background-color: var(--accent-color);
 
-	opacity: 0;
+	/* opacity: 0; */
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current:hover::after {
+/* .current:hover::after {
 	opacity: 1;
-}
+} */
 
 .nav-list-link,
 .contacts-list-link {
@@ -199,14 +204,10 @@ body {
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-list-link:hover,
-.nav-list-link:focus,
+.site-nav-list a:hover,
+.site-nav-list a:focus,
 .contacts-list-link:hover,
 .contacts-list-link:focus {
-	color: var(--accent-color);
-}
-
-.nav-list-link .link.current {
 	color: var(--accent-color);
 }
 
